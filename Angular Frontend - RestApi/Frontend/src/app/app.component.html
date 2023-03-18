@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 style="margin-top: 1rem;">Identificador de ciudad por ID</h1>
+
+    <input #intp type="number" class="form-control" id="inputPassword2" placeholder="ID" style="margin-top: 3rem;">
+    <button class="btn btn-primary mb-2" style="margin-top: 2rem;" (click)="getData(intp.value)">Solicitar</button>
+
+    <ul class="list-group" style="margin-top: 2rem;">
+        <li class="list-group-item" *ngFor="let item of returnItem"><b>ID:</b> {{item.ID}}</li>
+        <li class="list-group-item" *ngFor="let item of returnItem"><b>Nombre:</b> {{item.Name}}</li>
+        <li class="list-group-item" *ngFor="let item of returnItem"><b>Codigo de ciudad:</b> {{item.CountryCode}}</li>
+        <li class="list-group-item" *ngFor="let item of returnItem"><b>Distrito:</b> {{item.District}}</li>
+        <li class="list-group-item" *ngFor="let item of returnItem"><b>Numero de población total:</b> {{item.Population}}</li>
+    </ul>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+
+<router-outlet></router-outlet>
